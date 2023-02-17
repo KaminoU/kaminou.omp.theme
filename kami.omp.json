@@ -53,7 +53,7 @@
             "style": "folder"
           },
           "style": "powerline",
-          "template": " \uf74a  {{ .Path }} ",
+          "template": " \uf74a  {{ .Path }} <#ff479c,transparent>\ue0b0</>",
           "type": "path"
         },
         {
@@ -194,9 +194,24 @@
             "style": "roundrock",
             "always_enabled": true
           },
-          "style": "plain",
+          "style": "powerline",
           "template": "<transparent>\ue0b0</> \uf608 {{ .FormattedMs }}\u2800",
           "type": "executiontime"
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground_templates": [
+            "{{ if contains \"INT\" .Env.ENV}}#FF6F00{{end}}",
+            "{{ if contains \"PROD\" .Env.ENV}}#FFFFFF{{end}}",
+            "#00C853"
+          ],
+          "background_templates": [
+            "{{ if  contains \"PROD\" .Env.ENV }}#FF1744{{ end }}",
+            "lightWhite"
+          ],
+          "template": "{{ if .Env.ENV }} <b><f>{{ .Env.ENV }}</f></b> {{ end }}"
         },
         {
           "background": "#17e45b",
@@ -212,6 +227,7 @@
           },
           "style": "diamond",
           "template": "<parentBackground>\ue0b0</> \uf0e7 ",
+          "leading_diamond": "<transparent,parentBackground>\ue0b0</>",
           "trailing_diamond": "\ue0b4",
           "type": "exit"
         }
