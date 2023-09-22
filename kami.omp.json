@@ -26,7 +26,7 @@
           "style": "diamond",
           "leading_diamond": "\ue0b6",
           "template": " {{ .Icon }}  ",
-          "trailing_diamond": "\ue0b4",
+          "trailing_diamond": "<#ff8352,transparent>\ue0b4</>",
           "type": "os"
         },
         {
@@ -195,7 +195,7 @@
             "always_enabled": true
           },
           "style": "powerline",
-          "template": "<transparent>\ue0b0</> \uf608 {{ .FormattedMs }}\u2800",
+          "template": "<transparent>\ue0b0</> \uf608 {{ .FormattedMs }} <#83769c,transparent>\ue0b0</>",
           "type": "executiontime"
         },
         {
